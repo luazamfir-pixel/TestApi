@@ -1,0 +1,83 @@
+{
+  "info": {
+    "_postman_id": "c9d91c4c-bab0-4ae7-bc20-7b5b22550edf",
+    "name": "TEST API LEARN",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "60088041",
+    "_collection_link": "https://go.postman.co/collection/60088041-c9d91c4c-bab0-4ae7-bc20-7b5b22550edf?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "New Request",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"TEST-STATUT 200\", function () { pm.response.to.have.status(200); });\npm.test(\"Exista id 1\",function() {\n    const jsonData = pm.response.json();\n    pm.expect(jsonData.data[1].id).to.equal(2);\n});\n\npm.test(\"Test email ok\", function(){\n    const jsonDatas=pm.response.json();\n    pm.expect(jsonDatas.data[0].email).to.be.equal(\"george.bluth@reqres.in\");\n});\n\npm.test(\"FirstName exist\", function () {\n\nconst AData=pm.response.json();\n    pm.expect(AData.data[2].first_name).to.be.equal(\"Emma\");\n\n})\n\npm.test(\"Last name exist\", function(){\n    const Data=pm.response.json();\n    pm.expect(Data.data[5].last_name).to.be.equal(\"Ramos\")\n}\n)"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "value",
+              "value": "free_user_3Lub6Ccq5IgcUlugDrTcglELr2D",
+              "type": "string"
+            },
+            {
+              "key": "key",
+              "value": "ReqRes",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://reqres.in/api/users",
+          "protocol": "http",
+          "host": [
+            "reqres",
+            "in"
+          ],
+          "path": [
+            "api",
+            "users"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "8",
+              "disabled": true
+            },
+            {
+              "key": "email",
+              "value": "janet.weaver@reqres.in",
+              "disabled": true
+            },
+            {
+              "key": "first_name",
+              "value": "Emma",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
